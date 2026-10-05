@@ -9,7 +9,7 @@ function loop(){
   requestAnimationFrame(loop);
 }
 loop();
-document.querySelectorAll('a, .film, .tile, .fact').forEach(el=>{
+document.querySelectorAll('a, .film, .tile, .fact, .fear').forEach(el=>{
   el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
   el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
 });

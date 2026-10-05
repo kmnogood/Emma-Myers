@@ -220,3 +220,22 @@ strong{color:var(--accent-2);font-weight:500}
 .analysis-quote p{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2.2vw,28px);line-height:1.5;color:var(--fg)}
 .analysis-quote cite{display:block;margin-top:18px;font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:720px){.analysis-grid{grid-template-columns:1fr}}
+
+
+/* ===== ÄNGSTE ===== */
+.fears-grid{margin-top:60px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.fears-grid .fear{grid-column:span 2;position:relative;overflow:hidden}
+.fears-grid .fear:nth-child(n+4){grid-column:span 3}
+.fears-grid .fear::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.55;transition:opacity .5s}
+.fears-grid .fear:hover::before{opacity:1}
+.fears-grid .fear p{font-size:15px;line-height:1.65}
+.fears-note{margin-top:28px;font-size:12px;letter-spacing:.08em;color:var(--muted);max-width:680px}
+@media(max-width:1000px){
+  .fears-grid{grid-template-columns:repeat(2,1fr)}
+  .fears-grid .fear,.fears-grid .fear:nth-child(n+4){grid-column:span 1}
+  .fears-grid .fear:last-child{grid-column:span 2}
+}
+@media(max-width:768px){
+  .fears-grid{grid-template-columns:1fr}
+  .fears-grid .fear:last-child{grid-column:span 1}
+}
