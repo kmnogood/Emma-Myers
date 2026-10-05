@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Illustration: Herzrasen und Wellen einer Panikattacke">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#2a211c"/><stop offset="1" stop-color="#161210"/></radialGradient></defs>
+<rect width="600" height="400" fill="url(#g)"/>
+<circle cx="300" cy="200" r="40" fill="none" stroke="#ff5a8a" stroke-width="2" opacity="0.80"/>
+<circle cx="300" cy="200" r="75" fill="none" stroke="#ff5a8a" stroke-width="2" opacity="0.66"/>
+<circle cx="300" cy="200" r="110" fill="none" stroke="#ff5a8a" stroke-width="2" opacity="0.52"/>
+<circle cx="300" cy="200" r="145" fill="none" stroke="#ff5a8a" stroke-width="2" opacity="0.38"/>
+<circle cx="300" cy="200" r="185" fill="none" stroke="#ff5a8a" stroke-width="2" opacity="0.24"/>
+<path d="M300 236 C245 196 258 156 284 162 C295 165 300 176 300 176 C300 176 305 165 316 162 C342 156 355 196 300 236 Z" fill="#ff5a8a" opacity=".9"/>
+<polyline points="0,200 150,200 190,200 210,150 235,262 258,120 280,230 300,200 600,200" fill="none" stroke="#ffd166" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity=".9"/>
+
+</svg>

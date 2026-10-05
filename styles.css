@@ -223,13 +223,24 @@ strong{color:var(--accent-2);font-weight:500}
 
 
 /* ===== ÄNGSTE ===== */
-.fears-grid{margin-top:60px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.fears-grid .fear{grid-column:span 2;position:relative;overflow:hidden}
+.fears-grid{margin-top:60px;display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.fears-grid .fear{grid-column:span 2;position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
 .fears-grid .fear:nth-child(n+4){grid-column:span 3}
-.fears-grid .fear::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.55;transition:opacity .5s}
+.fears-grid .fear::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.55;transition:opacity .5s;z-index:2}
 .fears-grid .fear:hover::before{opacity:1}
+.fear-img{margin:0;aspect-ratio:3/2;overflow:hidden;background:var(--bg-3)}
+.fear-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.fear:hover .fear-img img{transform:scale(1.06)}
+.fear-body{padding:26px 26px 30px}
+.fear-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.fear-head .card-icon{margin-bottom:0;font-size:28px}
+.fear-badge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid rgba(246,239,230,.2);color:var(--muted);white-space:nowrap}
+.fear-badge.is-sourced{border-color:var(--accent-2);color:var(--accent-2)}
+.fear-badge.is-reported{border-color:var(--accent);color:var(--accent)}
 .fears-grid .fear p{font-size:15px;line-height:1.65}
-.fears-note{margin-top:28px;font-size:12px;letter-spacing:.08em;color:var(--muted);max-width:680px}
+.fear-why{margin-top:16px;padding-top:16px;border-top:1px solid rgba(246,239,230,.08)}
+.why-label{display:inline-block;margin-right:6px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--accent-2);letter-spacing:.04em}
+.fears-note{margin-top:28px;font-size:12.5px;line-height:1.7;letter-spacing:.04em;color:var(--muted);max-width:780px}
 @media(max-width:1000px){
   .fears-grid{grid-template-columns:repeat(2,1fr)}
   .fears-grid .fear,.fears-grid .fear:nth-child(n+4){grid-column:span 1}
@@ -239,3 +250,6 @@ strong{color:var(--accent-2);font-weight:500}
   .fears-grid{grid-template-columns:1fr}
   .fears-grid .fear:last-child{grid-column:span 1}
 }
+
+.fear-src{margin-top:14px;font-size:11.5px !important;letter-spacing:.06em;color:var(--muted);line-height:1.5 !important}
+.fear-src a{color:var(--accent-2);text-decoration:underline;text-underline-offset:3px}

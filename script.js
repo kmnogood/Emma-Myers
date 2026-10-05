@@ -92,3 +92,23 @@ document.querySelectorAll('[data-scroll]').forEach(a=>{
   overlay.addEventListener('click',()=>overlay.classList.remove('show'));
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') overlay.classList.remove('show'); });
 })();
+
+
+// Fehlende Galerie-Bilder ausblenden, damit keine kaputten Kacheln erscheinen
+(function(){
+  function tidy(){
+    document.querySelectorAll('.gallery .tile img').forEach(img=>{
+      const broken = img.complete && img.naturalWidth === 0;
+      if(broken){ const t = img.closest('.tile'); if(t) t.style.display = 'none'; }
+    });
+    document.querySelectorAll('.gallery .grid').forEach(grid=>{
+      const visible = [...grid.querySelectorAll('.tile')].some(t=>t.style.display !== 'none');
+      if(visible) return;
+      grid.style.display = 'none';
+      let p = grid.previousElementSibling, n = 0;
+      while(p && n < 2 && (p.matches('.qa-sub') || p.matches('.qa-title'))){ p.style.display = 'none'; p = p.previousElementSibling; n++; }
+    });
+  }
+  document.querySelectorAll('.gallery .tile img').forEach(img=>img.addEventListener('error', tidy));
+  window.addEventListener('load', tidy);
+})();
